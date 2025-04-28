@@ -16,11 +16,11 @@ export default function Navigation() {
   } = useToast();
   const handlePlatformAction = () => {
     toast({
-      description: "Grazie per il tuo interesse, la piattaforma sarà operativa a breve.",
+      description: "Grazie per il tuo interesse, la piattaforma sarà operativa a breve, se desideri maggiori informazioni non esitare a scriverci alla nostra email!",
       className: "fixed top-20 right-4"
     });
   };
-  return <nav className="fixed top-0 left-0 right-0 w-full z-50 bg-orange-400 shadow-sm backdrop-blur-sm">
+  return <nav className="fixed top-0 left-0 right-0 w-full z-50 bg-gradient-to-l from-green-400 to-blue-500 shadow-sm backdrop-blur-sm">
     <div className="w-full flex items-center h-24">
       <div className="pl-0">
         <Link to="/">
@@ -29,11 +29,11 @@ export default function Navigation() {
         </Link>
       </div>
 
-      <div className="hidden md:flex items-center space-x-8 mx-auto">
+      <div className="hidden md:flex items-center space-x-8 mx-auto px-8">
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent hover:bg-blue-100 text-lg">Il Nostro Mondo</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="bg-transparent hover:bg-blue-100 text-lg text-white">Il Nostro Mondo</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="grid gap-3 p-4 w-[400px] bg-white/90 backdrop-blur-md rounded-md shadow-lg">
                   <Link to="/chi-siamo" className="block p-3 hover:bg-blue-50 rounded-md">
@@ -50,7 +50,7 @@ export default function Navigation() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-gray-950 bg-transparent text-lg">Cosa Facciamo</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="text-gray-950 bg-transparent text-lg text-white">Cosa Facciamo</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="p-4 w-[250px] bg-white backdrop-blur-md rounded-md shadow-lg">
                   <div className="flex flex-col space-y-2">
@@ -69,14 +69,14 @@ export default function Navigation() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link to="/careers" className="px-4 py-2 hover:text-blue-600 transition-colors text-lg">
-                <span className="font-bold">Careers</span>
+              <Link to="/careers" className="text-white bg-transparent text-lg font-medium block p-2 rounded-md hover:backdrop-blur-md hover:bg-white hover:text-gray-950">
+                Careers
               </Link>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link to="/partnership" className="px-4 py-2 hover:text-blue-600 transition-colors text-lg">
-                <span className="font-bold">Partnership</span>
+              <Link to="/careers" className="text-white bg-transparent text-lg font-medium block p-2 rounded-md hover:backdrop-blur-md hover:bg-white hover:text-gray-950">
+                Partnership
               </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
@@ -85,9 +85,10 @@ export default function Navigation() {
       <div className="hidden md:flex items-center space-x-4 mr-2">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="bg-orange-400 hover:bg-orange-600 text-lg border-2 border-white">
+            <Button className="bg-white text-lg text-green-600 border-2 border-white transform transition-transform duration-300 hover:scale-105 hover:bg-white">
               Accedi alla piattaforma
             </Button>
+
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-40">
             <DropdownMenuItem onClick={handlePlatformAction}>

@@ -8,10 +8,10 @@ export default function Hero() {
       });
     }
   };
-  return <div className="relative bg-gradient-to-b from-white via-orange-1 to-orange-100 min-h-[500px] flex items-center">
+  return <div className="relative bg-gradient-to-b from-white via-blue-1 to-blue-100 min-h-[500px] flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">"La donazione a portata di click"</h1>
-        <p className="text-gray-600 mb-8 max-w-3xl mx-auto text-xl font-normal">Siamo la prima piattaforma in Italia che consente sia donazioni monetarie che materiali per progetti ad alto impatto sociale. Aiutiamo gli enti non profit a ottenere risorse per realizzare progetti che cambiano il territorio e offriamo alle aziende uno strumento per fare la differenza in modo trasparente, visibile e misurabile.</p>
+        <p className="text-gray-600 mb-8 max-w-3xl mx-auto text-xl font-normal">Siamo la prima piattaforma in Italia che connette aziende ed enti non-profit tramite donazioni monetarie e materiali, per progetti ad alto impatto sociale. Aiutiamo gli enti a ottenere risorse per realizzare progetti che cambiano il territorio e offriamo alle aziende uno strumento per fare la differenza in modo trasparente, visibile e misurabile.</p>
         <Button onClick={handleScrollDown} className="bg-blue-600 hover:bg-blue-700">
           Scopri di più
         </Button>

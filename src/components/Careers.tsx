@@ -11,8 +11,7 @@ export default function Careers() {
         <h2 className="text-6xl font-bold text-gray-900 mb-6">Unisciti a noi</h2>
         <h3 className="text-3xl font-medium mt-2 text-blue-600">Insieme è più semplice</h3>
         <p className="mt-4 text-lg text-gray-600 mx-auto">
-          Anche se al momento non abbiamo posizioni aperte, siamo sempre entusiasti di conoscere persone
-          che vogliono cambiare la relazione tra profit e non-profit.
+        Anche se al momento non abbiamo posizioni aperte, siamo sempre entusiasti di conoscere persone che vogliono creare impatto e lasciare il segno.
         </p>
         <p className="mt-4 text-lg text-gray-600 mx-auto">
           Se ti riconosci nei nostri valori non farti scrupoli a scriverci!

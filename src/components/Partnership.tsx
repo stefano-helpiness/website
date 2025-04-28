@@ -10,7 +10,7 @@ const partnerTypes = [{
   image: "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
 }, {
   title: "Enti del Terzo Settore",
-  description: "Impegnati nel valorizzare i loro progetti in modo più visibile ed efficiente",
+  description: "Impegnati nel valorizzare i loro progetti fornendogli maggiore visibilità e trasparenza",
   icon: <Handshake className="h-8 w-8 text-green-400" />,
   image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
 }, {
@@ -59,7 +59,7 @@ export default function Partnership() {
         <div className="text-center mt-16">
           <h3 className="text-xl font-semibold mb-4">Vuoi diventare nostro partner?</h3>
           <p className="text-gray-600 mb-6 max-w-3xl mx-auto">
-            Siamo sempre aperti a partnership con chi vuole lasciare il segno.
+            Siamo sempre aperti a partnership.
             Scrivici a <a href="mailto:info@helpiness.it" className="text-blue-600 hover:underline">info@helpinessworld.com</a> o usa il form qui sotto.
           </p>
           <Link to="/partnership-form">

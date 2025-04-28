@@ -28,8 +28,8 @@ export default function PlatformJourney() {
     description: "Accedi alla documentazione dettagliata delle donazioni effettuate.",
     icon: <ClipboardList className="h-8 w-8 text-blue-600" />
   }, {
-    title: "Statistiche annuali",
-    description: "Visualizza e analizza l'impatto delle tue donazioni nel corso dell'anno.",
+    title: "Documentazione Fiscale",
+    description: "Ci occupiamo noi di fornirti tutti i documenti fiscali necessari.",
     icon: <BarChart3 className="h-8 w-8 text-blue-600" />
   }, {
     title: "Recensioni",

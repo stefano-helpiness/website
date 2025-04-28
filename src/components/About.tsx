@@ -20,7 +20,7 @@ const values = [{
 }];
 
 export default function About() {
-  return <div id="about" className="py-16 bg-gradient-to-b from-white via-orange-50 to-orange-100">
+  return <div id="about" className="py-16 bg-gradient-to-b from-white via-white to-blue-5">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-12">
         <h2 className="text-6xl font-bold text-gray-900">Chi siamo</h2>
@@ -32,7 +32,7 @@ export default function About() {
           </p>
           <p className="mt-4 text-xl text-gray-600 mx-auto">
             Abbiamo avuto modo di osservare quanto può essere <span className="font-bold">complicato</span>, per le aziende, trasformare la volontà di aiutare in impatto
-            <span className="font-bold"> reale</span> e quanto possa essere <span className="font-bold">frustrante</span> per un ente non-profit dover bussare mille porte
+            <span className="font-bold"> reale</span>, e quanto possa essere <span className="font-bold">frustrante</span> per un ente non-profit dover bussare mille porte
             per ottenere <span className="font-bold">supporto</span>.
 
           </p>
