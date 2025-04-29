@@ -49,7 +49,7 @@ export default function BusinessModel() {
   ];
 
   return (
-    <div id="business-model" className="py-16 bg-gradient-to-b from-white via-orange-50 to-orange-100">
+    <div id="business-model" className="py-16 bg-gradient-to-b from-blue-50 via-blue-100 to-blue-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-6xl font-bold">Il nostro modello di business</h2>

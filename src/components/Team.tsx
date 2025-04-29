@@ -43,7 +43,7 @@ export default function Team() {
   ];
 
   return (
-    <div className="py-16 bg-gradient-to-b from-white via-orange-50 to-orange-100">
+    <div className="py-16 bg-gradient-to-b from-blue-50 via-blue-100 to-blue-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-6xl font-bold text-gray-900">Il Nostro Team</h2>
@@ -61,7 +61,7 @@ export default function Team() {
                   <img 
                     src={member.image} 
                     alt={member.name}
-                    className="w-32 h-32 rounded-full object-cover"
+                    className="h-36 w-36 rounded-full object-cover"
                   />
                 </div>
                 <div className="sm:w-2/3 p-6">

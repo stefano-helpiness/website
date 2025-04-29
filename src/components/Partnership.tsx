@@ -26,7 +26,7 @@ const partnerTypes = [{
 }];
 
 export default function Partnership() {
-  return <div id="partnership" className="bg-gradient-to-b from-white via-orange-50 to-orange-100 py-16">
+  return <div id="partnership" className="bg-gradient-to-b from-blue-50 via-blue-100 to-blue-200 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-6xl font-bold text-gray-900">Partnership</h2>

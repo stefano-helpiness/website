@@ -24,10 +24,14 @@ export default function Navigation() {
     <div className="w-full flex items-center h-24">
       <div className="pl-0">
         <Link to="/">
-          {/* <img src="/lovable-uploads/d07ceb7c-6c95-49ad-9ff9-db2a5d688ac7.png" alt="Helpiness Logo" className="h-16" /> */}
-          <img src="/lovable-uploads/HelpinessLogo_v1.png" alt="Helpiness Logo" className="h-24" />
+          <img
+            src="/lovable-uploads/HelpinessLogo_v1.png"
+            alt="Helpiness Logo"
+            className="w-20 h-20 rounded-2xl "
+          />
         </Link>
       </div>
+
 
       <div className="hidden md:flex items-center space-x-8 mx-auto px-8">
         <NavigationMenu>
@@ -75,7 +79,7 @@ export default function Navigation() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link to="/careers" className="text-white bg-transparent text-lg font-medium block p-2 rounded-md hover:backdrop-blur-md hover:bg-white hover:text-gray-950">
+              <Link to="/partnership" className="text-white bg-transparent text-lg font-medium block p-2 rounded-md hover:backdrop-blur-md hover:bg-white hover:text-gray-950">
                 Partnership
               </Link>
             </NavigationMenuItem>
@@ -85,7 +89,7 @@ export default function Navigation() {
       <div className="hidden md:flex items-center space-x-4 mr-2">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="bg-white text-lg text-green-600 border-2 border-white transform transition-transform duration-300 hover:scale-105 hover:bg-white">
+            <Button className="bg-white text-lg text-blue-900 border-2 border-white transform transition-transform duration-300 hover:scale-105 hover:bg-white">
               Accedi alla piattaforma
             </Button>
 
