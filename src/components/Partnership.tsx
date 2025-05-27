@@ -1,73 +1,84 @@
 import { Building, Handshake, Briefcase, FileText } from "lucide-react";
-import { Button } from "./ui/button";
-import { Card, CardContent } from "./ui/card";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const partnerTypes = [{
   title: "Aziende",
   description: "Interessate a rafforzare il loro impegno sociale attraverso iniziative ad alto impatto",
-  icon: <Building className="h-8 w-8 text-orange-400" />,
-  image: "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+  icon: <Building className="h-12 w-12 text-orange-500" />,
+  image: "/api/placeholder/600/400"
 }, {
   title: "Enti del Terzo Settore",
   description: "Impegnati nel valorizzare i loro progetti fornendogli maggiore visibilità e trasparenza",
-  icon: <Handshake className="h-8 w-8 text-green-400" />,
-  image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+  icon: <Handshake className="h-12 w-12 text-green-500" />,
+  image: "/api/placeholder/600/400"
 }, {
   title: "Fondazioni e Università",
   description: "Per collaborazioni accademiche e iniziative di ricerca sull'impatto sociale",
-  icon: <FileText className="h-8 w-8 text-sky-400" />,
-  image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+  icon: <FileText className="h-12 w-12 text-blue-500" />,
+  image: "/api/placeholder/600/400"
 }, {
   title: "Incubatori e Acceleratori",
   description: "Allineati con i nostri valori e orientati alla crescita del progetto",
-  icon: <Briefcase className="h-8 w-8 text-orange-400" />,
-  image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+  icon: <Briefcase className="h-12 w-12 text-purple-500" />,
+  image: "/api/placeholder/600/400"
 }];
 
 export default function Partnership() {
-  return <div id="partnership" className="bg-gradient-to-b from-blue-50 via-blue-100 to-blue-200 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-6xl font-bold text-gray-900">Partnership</h2>
-          <h3 className="text-3xl font-medium mt-2 text-blue-600">Cresciamo insieme, creiamo valore condiviso</h3>
-          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            Helpiness è una piattaforma <span className="font-bold">collaborativa</span>: crediamo nel potere delle alleanze per generare 
-            un impatto sociale più <span className="font-bold">tangibile</span>, più <span className="font-bold">solido</span> e più <span className="font-bold">diffuso</span>.
+  const [hoveredCard, setHoveredCard] = useState(null);
+  
+  return (
+    <div id="partnership" className="bg-gradient-to-b from-white via-blue-50 to-blue-100 py-24">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold text-gray-900 mb-4">Partnership</h2>
+          <div className="h-1 w-24 bg-orange-500 mx-auto mb-8"></div>
+          <h3 className="text-2xl font-medium text-blue-700 mb-6">Cresciamo insieme, creiamo valore condiviso</h3>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            Helpiness è una piattaforma <span className="font-bold text-blue-700">collaborativa</span>: crediamo nel potere delle alleanze per generare 
+            un impatto sociale più <span className="font-bold text-orange-600">tangibile</span>, più <span className="font-bold text-orange-600">solido</span> e più <span className="font-bold text-orange-600">diffuso</span>.
           </p>
         </div>
         
-        <div className="space-y-16">
-          {partnerTypes.map((partner, index) => <div key={partner.title} className={`flex items-center gap-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-              <div className="w-1/2">
-                <Card className="border border-gray-200 hover:shadow-lg transition-shadow duration-300 h-64">
-                  <CardContent className="pt-6">
-                    <div className="mx-auto mb-4 flex justify-center bg-transparent">
-                      {partner.icon}
-                    </div>
-                    <h4 className="text-3xl font-semibold mb-2 text-center">{partner.title}</h4>
-                    <p className="text-gray-600 text-xl text-center">{partner.description}</p>
-                  </CardContent>
-                </Card>
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {partnerTypes.map((partner, index) => (
+            <div 
+              key={partner.title}
+              className="relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-2"
+              onMouseEnter={() => setHoveredCard(index)}
+              onMouseLeave={() => setHoveredCard(null)}
+            >
+              <div className="absolute inset-0 bg-white rounded-xl z-0"></div>
+              <div 
+                className="absolute inset-0 bg-cover bg-center rounded-xl opacity-30 transition-opacity duration-300"
+                style={{backgroundImage: `url(${partner.image})`}}
+              ></div>
+              <div className="relative z-10 p-8 h-full flex flex-col items-center justify-center text-black">
+                <div className="bg-white/20 rounded-full p-4 mb-6">
+                  {partner.icon}
+                </div>
+                <h4 className="text-2xl font-bold mb-4 text-center">{partner.title}</h4>
+                <p className="text-black/90 text-center leading-relaxed">
+                  {partner.description}
+                </p>
               </div>
-              <div className="w-1/2">
-                <img src={partner.image} alt={partner.title} className="rounded-lg shadow-lg object-cover h-64 w-full" />
-              </div>
-            </div>)}
+            </div>
+          ))}
         </div>
         
-        <div className="text-center mt-16">
-          <h3 className="text-xl font-semibold mb-4">Vuoi diventare nostro partner?</h3>
-          <p className="text-gray-600 mb-6 max-w-3xl mx-auto">
-            Siamo sempre aperti a partnership.
-            Scrivici a <a href="mailto:info@helpiness.it" className="text-blue-600 hover:underline">info@helpinessworld.com</a> o usa il form qui sotto.
+        <div className="bg-white rounded-2xl shadow-xl p-12 text-center max-w-4xl mx-auto transform -translate-y-6">
+          <h3 className="text-2xl font-bold mb-6 text-gray-900">Vuoi diventare nostro partner?</h3>
+          <p className="text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Siamo sempre aperti a nuove partnership che condividono i nostri valori.
+            Scrivici a <a href="mailto:info@helpinessworld.com" className="text-blue-600 hover:text-orange-500 transition-colors font-medium">info@helpinessworld.com</a> o utilizza il nostro form dedicato.
           </p>
-          <Link to="/partnership-form">
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white">
-              Diventa partner
-            </Button>
-          </Link>
+          <button 
+            className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-3 rounded-full text-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+            onClick={() => window.location.href = '/partnership-form'}
+          >
+            Diventa partner
+          </button>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 }

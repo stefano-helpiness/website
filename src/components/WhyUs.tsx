@@ -16,11 +16,6 @@ const features = [
       "Ogni donazione è collegata a un progetto concreto. Le aziende possono vedere dove finiscono le risorse e quali risultati generano, in modo chiaro e misurabile.",
     icon: <TrendingUp className="h-10 w-10 text-white" />,
     bgColor: "bg-gradient-to-br from-orange-500 to-red-500",
-    testimonial: {
-      quote: "Finalmente possiamo vedere in tempo reale l'impatto delle nostre donazioni e condividerlo con i nostri stakeholder.",
-      author: "Direttore CSR, Azienda nel settore energetico",
-      company: "Energia Futuro S.p.A."
-    }
   },
   {
     title: "Trasparenza totale",
@@ -28,11 +23,6 @@ const features = [
       "Rendiamo trasparente ogni passaggio: dalla scelta della donazione all'utilizzo dei fondi. Fiducia, dati, e trasparenza sono il cuore della nostra piattaforma.",
     icon: <CircleCheck className="h-10 w-10 text-white" />,
     bgColor: "bg-gradient-to-br from-emerald-500 to-green-600",
-    testimonial: {
-      quote: "La trasparenza offerta da questa piattaforma ha trasformato il nostro modo di gestire le iniziative di CSR, costruendo fiducia sia internamente che esternamente.",
-      author: "Responsabile Sostenibilità",
-      company: "TechNova Group"
-    }
   },
   {
     title: "Matching intelligente",
@@ -40,11 +30,7 @@ const features = [
       "Usiamo criteri avanzati per connettere aziende ed enti non profit in base a valori comuni, bisogni reali e obiettivi condivisi.",
     icon: <Lightbulb className="h-10 w-10 text-white" />,
     bgColor: "bg-gradient-to-br from-blue-400 to-blue-600",
-    testimonial: {
-      quote: "In pochi click abbiamo trovato partner perfettamente allineati ai nostri valori aziendali e agli obiettivi ESG che ci eravamo prefissati.",
-      author: "CEO",
-      company: "Innovare S.r.l."
-    }
+
   },
   {
     title: "Visibilità per tutti",
@@ -52,11 +38,6 @@ const features = [
       "Anche gli enti più piccoli possono emergere. Helpiness è uno strumento equo che valorizza ogni progetto ad alto impatto sociale, grande o piccolo che sia.",
     icon: <FileSearch className="h-10 w-10 text-white" />,
     bgColor: "bg-gradient-to-br from-amber-400 to-amber-600",
-    testimonial: {
-      quote: "Come piccola associazione, finalmente abbiamo visibilità e possiamo competere per partnership importanti grazie alle nostre idee, non alle dimensioni.",
-      author: "Fondatrice",
-      company: "Associazione Nuovi Orizzonti"
-    }
   },
   {
     title: "Semplicità e supporto",
@@ -64,11 +45,6 @@ const features = [
       "Donare è facile. La nostra piattaforma è intuitiva, guidata, e con assistenza umana sempre disponibile per ogni esigenza.",
     icon: <CircleDollarSign className="h-10 w-10 text-white" />,
     bgColor: "bg-gradient-to-br from-purple-500 to-indigo-600",
-    testimonial: {
-      quote: "L'interfaccia intuitiva e il supporto costante hanno reso tutto il processo incredibilmente semplice, anche per chi come noi era alla prima esperienza.",
-      author: "Direttore Marketing",
-      company: "Fashion Forward Italia"
-    }
   }
 ];
 
@@ -125,28 +101,6 @@ const FeatureCard = ({ feature, index }) => {
           <div className="md:w-2/3">
             <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 transition-all duration-300 hover:shadow-lg">
               <p className="text-gray-700 mb-6">{feature.description}</p>
-              
-              <motion.div 
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ 
-                  opacity: isHovered ? 1 : 0,
-                  height: isHovered ? "auto" : 0
-                }}
-                transition={{ duration: 0.3 }}
-                className="overflow-hidden"
-              >
-                <div className="border-t border-gray-200 pt-4 mt-2">
-                  <blockquote className="italic text-gray-600">
-                    "{feature.testimonial.quote}"
-                  </blockquote>
-                  <div className="mt-2 text-sm text-gray-500">
-                    <span className="font-medium">{feature.testimonial.author}</span>
-                    {feature.testimonial.company && (
-                      <span> · {feature.testimonial.company}</span>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
             </div>
           </div>
         </div>
@@ -179,33 +133,9 @@ const BackgroundBlob = ({ color, delay, duration, size, top, left }) => {
 
 export default function WhyUs() {
   return (
-    <div id="why-us" className="relative py-24 overflow-hidden bg-gradient-to-b from-blue-50 via-blue-100 to-blue-200">
+    <div id="why-us" className="relative py-24 overflow-hidden bg-gradient-to-b from-blue-50 via-blue-50 to-blue-100">
       {/* Background blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <BackgroundBlob 
-          color="bg-orange-400" 
-          delay={0} 
-          duration={8} 
-          size="w-96 h-96" 
-          top="5%" 
-          left="-5%" 
-        />
-        <BackgroundBlob 
-          color="bg-blue-400" 
-          delay={2} 
-          duration={10} 
-          size="w-80 h-80" 
-          top="30%" 
-          left="80%" 
-        />
-        <BackgroundBlob 
-          color="bg-green-400" 
-          delay={4} 
-          duration={12} 
-          size="w-64 h-64" 
-          top="70%" 
-          left="10%" 
-        />
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ">
@@ -216,7 +146,7 @@ export default function WhyUs() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block py-1 px-3 rounded-full bg-orange-100 text-orange-800 text-sm font-medium mb-4">
+          <span className="inline-block py-1 px-3 rounded-full bg-orange-100 text-orange-800 text-xl font-medium mb-4">
             La nostra unicità
           </span>
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">

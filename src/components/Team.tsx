@@ -1,6 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { useState } from "react";
 import { Linkedin } from "lucide-react";
-import { Button } from "./ui/button";
 
 interface TeamMember {
   name: string;
@@ -11,6 +10,8 @@ interface TeamMember {
 }
 
 export default function Team() {
+  const [activeIndex, setActiveIndex] = useState(null);
+
   const team: TeamMember[] = [
     {
       name: "Luca Bonauguri",
@@ -43,45 +44,68 @@ export default function Team() {
   ];
 
   return (
-    <div className="py-16 bg-gradient-to-b from-blue-50 via-blue-100 to-blue-200">
+    <div className="py-24 bg-gradient-to-b from-white via-blue-50 to-blue-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-6xl font-bold text-gray-900">Il Nostro Team</h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            Conosciamo i quattro fondatori di Helpiness, uniti dalla passione per 
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold text-gray-900 mb-4">Il Nostro Team</h2>
+          {/* <div className="h-1 w-24 bg-orange-500 mx-auto mb-8"></div> */}
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            Conosciamo i quattro fondatori di Helpiness, uniti dalla passione per
             l'innovazione sociale e il desiderio di creare un impatto concreto nel territorio.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {team.map((member) => (
-            <Card key={member.name} className="overflow-hidden border border-blue-400 hover:shadow-md transition-shadow duration-300 min-h-56">
-              <div className="flex flex-col sm:flex-row">
-                <div className="sm:w-1/3 p-6 flex items-center justify-center">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    className="h-36 w-36 rounded-full object-cover"
-                  />
-                </div>
-                <div className="sm:w-2/3 p-6">
-                  <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
-                  <p className="text-blue-600 font-medium mb-2">{member.role}</p>
-                  
-                  <p className="text-sm text-gray-600 mb-3">{member.bio}</p>
-                  <a 
-                    href={member.linkedIn} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800"
-                  >
-                    <Linkedin className="h-4 w-4 mr-1" />
-                    LinkedIn
-                  </a>
-                </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {team.map((member, index) => (
+            <div
+              key={member.name}
+              className="group relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 transform hover:-translate-y-2 flex flex-col"
+              onMouseEnter={() => setActiveIndex(index)}
+              onMouseLeave={() => setActiveIndex(null)}
+            >
+              <div className="relative h-64 overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300 z-10"></div>
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-auto h-full mx-auto object-contain md:w-full md:h-full md:object-cover md:object-center transition-transform duration-500 group-hover:scale-100"
+                />
               </div>
-            </Card>
+
+
+              <div className="p-6 relative z-20 flex-grow flex flex-col">
+                <div className="mb-4">
+                  <h3 className="text-2xl font-bold text-gray-900">{member.name}</h3>
+                  <p className="text-blue-600 font-medium">{member.role}</p>
+                </div>
+
+                <p className="text-gray-600 italic mb-4 flex-grow">{member.bio}</p>
+
+                <a
+                  href={member.linkedIn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+                >
+                  <Linkedin className="h-5 w-5 mr-2" />
+                  <span className="font-medium">LinkedIn</span>
+                </a>
+              </div>
+
+              {activeIndex === index && (
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-orange-500"></div>
+              )}
+            </div>
           ))}
+        </div>
+
+        <div className="hidden mt-16 text-center">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded-full text-lg shadow-md hover:shadow-lg transition-all">
+            Unisciti al Team
+          </button>
+          <p className="mt-4 text-gray-600">
+            Siamo sempre alla ricerca di talenti appassionati e motivati
+          </p>
         </div>
       </div>
     </div>

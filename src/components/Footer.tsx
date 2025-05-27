@@ -3,13 +3,13 @@ import { Linkedin } from "lucide-react";
 
 export default function Footer() {
   return <footer className="bg-gray-900 text-white py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-6">
           <div className="md:col-span-1">
             <Link to="/">
-              <img src="/lovable-uploads/HelpinessLogo_v1.png" alt="Helpiness Logo" className="h-10 mb-2" />
+              <img src="/lovable-uploads/HelpinessLogo_v1.png" alt="Helpiness Logo" className="h-14 mb-2" />
             </Link>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 text-sm mt-2">
               Connecting Business Impact with Social Change
             </p>
           </div>
@@ -81,6 +81,8 @@ export default function Footer() {
         
         <div className="border-t border-gray-800 mt-6 pt-4 text-center text-gray-400 text-xs">
           <p>© {new Date().getFullYear()} Helpiness. Tutti i diritti riservati.</p>
+          <br />
+          <p>Home page background by Franco Vannini on Flickr, licensed under CC BY 2.0.</p>
         </div>
       </div>
     </footer>;

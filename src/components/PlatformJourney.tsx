@@ -1,16 +1,17 @@
 import { motion } from "framer-motion";
-import { 
-  FileText, 
-  Building2, 
-  Search, 
-  Gift, 
-  FileUp, 
-  ClipboardList, 
-  BarChart3, 
+import {
+  FileText,
+  Building2,
+  Search,
+  Gift,
+  FileUp,
+  ClipboardList,
+  BarChart3,
   Star,
   ArrowRight,
-  CheckCircle
+  CheckCircle,
 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export default function PlatformJourney() {
   const steps = [
@@ -23,78 +24,89 @@ export default function PlatformJourney() {
         metrics: "2 minuti per registrarsi",
         benefit: "Accesso immediato al pannello di controllo"
       }
-    }, 
+    },
     {
       title: "Creazione profilo aziendale",
       description: "Completa il profilo della tua azienda con tutte le informazioni necessarie.",
       icon: <Building2 className="h-8 w-8 text-white" />,
       bgColor: "bg-gradient-to-br from-purple-500 to-indigo-600",
       visualContent: {
-        metrics: "Profilo verificato al 100%",
-        benefit: "Maggiore visibilità tra gli enti no-profit"
+        metrics: "Profilo verificato",
+        benefit: "Visibile a tutti gli altri utenti"
       }
-    }, 
+    },
     {
       title: "Ricerca dei progetti",
       description: "Esplora i progetti sociali disponibili sulla piattaforma.",
       icon: <Search className="h-8 w-8 text-white" />,
       bgColor: "bg-gradient-to-br from-cyan-500 to-blue-600",
       visualContent: {
-        metrics: "+200 progetti disponibili",
+        metrics: "Progetti di diversa natura",
         benefit: "Filtri avanzati per trovare il progetto ideale"
       }
-    }, 
+    },
     {
       title: "Scelta della donazione",
       description: "Seleziona il tipo e l'entità della donazione per il progetto scelto.",
       icon: <Gift className="h-8 w-8 text-white" />,
       bgColor: "bg-gradient-to-br from-orange-500 to-red-500",
       visualContent: {
-        metrics: "Donazioni a partire da 50€",
-        benefit: "Diverse opzioni di contributo disponibili"
+        metrics: "Donazione monetaria o di prodotti",
+        benefit: "Scegli a seconda delle tue esigenze"
       }
-    }, 
+    },
     {
       title: "Possibilità di pubblicare prodotti",
       description: "Pubblica i prodotti che la tua azienda è pronta a donare.",
       icon: <FileUp className="h-8 w-8 text-white" />,
       bgColor: "bg-gradient-to-br from-green-500 to-teal-600",
       visualContent: {
-        metrics: "Caricamento di cataloghi prodotti",
+        metrics: "Caricamento dei prodotti",
         benefit: "Notifiche automatiche agli enti interessati"
       }
-    }, 
+    },
     {
       title: "Rendicontazione",
       description: "Accedi alla documentazione dettagliata delle donazioni effettuate.",
       icon: <ClipboardList className="h-8 w-8 text-white" />,
       bgColor: "bg-gradient-to-br from-violet-500 to-purple-600",
       visualContent: {
-        metrics: "Report mensili automatici",
+        metrics: "Report automatici",
         benefit: "Monitoraggio dell'impatto sociale generato"
       }
-    }, 
+    },
     {
       title: "Documentazione Fiscale",
       description: "Ci occupiamo noi di fornirti tutti i documenti fiscali necessari.",
       icon: <BarChart3 className="h-8 w-8 text-white" />,
       bgColor: "bg-gradient-to-br from-blue-400 to-indigo-500",
       visualContent: {
-        metrics: "100% conformità fiscale",
-        benefit: "Detrazioni assicurate per ogni donazione"
+        metrics: "Conformità fiscale",
+        benefit: "Deduzioni fiscali per ogni donazione"
       }
-    }, 
+    },
     {
       title: "Recensioni",
       description: "Condividi la tua esperienza e leggi le testimonianze degli enti beneficiari.",
       icon: <Star className="h-8 w-8 text-white" />,
       bgColor: "bg-gradient-to-br from-amber-500 to-orange-600",
       visualContent: {
-        metrics: "Media recensioni 4.8/5",
-        benefit: "Testimonianze verificate degli enti beneficiari"
+        metrics: "Recensioni pubbliche e visibili",
+        benefit: "Testimonianze degli enti beneficiari"
       }
     }
   ];
+
+  const {
+    toast
+  } = useToast();
+  const handlePlatformAction = () => {
+    toast({
+      description: "Grazie per il tuo interesse! La piattaforma sarà operativa a breve, se desideri maggiori informazioni non esitare a scriverci alla nostra email!",
+      className: "fixed top-20 left-1/2 -translate-x-1/2 w-[70%]"
+    });
+  };
+
 
   // Animazione per i singoli elementi
   const cardVariants = {
@@ -117,7 +129,7 @@ export default function PlatformJourney() {
   // Componente per le linee di connessione
   const ConnectionLine = () => (
     <div className="hidden lg:block absolute -right-8 top-1/2 transform -translate-y-1/2 w-16 h-px">
-      <motion.div 
+      <motion.div
         initial={{ scaleX: 0, originX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
@@ -129,15 +141,15 @@ export default function PlatformJourney() {
 
   return (
     <div id="platform-journey" className="py-20 bg-gradient-to-b from-white via-blue-50 to-blue-100 overflow-hidden">
-      {/* Background decorativo */}
+      {/* Background decorativo
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute rounded-full w-96 h-96 bg-blue-200 blur-3xl opacity-20" style={{ top: '10%', left: '-10%' }}></div>
         <div className="absolute rounded-full w-72 h-72 bg-purple-200 blur-3xl opacity-20" style={{ top: '60%', right: '-5%' }}></div>
         <div className="absolute rounded-full w-80 h-80 bg-orange-200 blur-3xl opacity-20" style={{ bottom: '-10%', left: '30%' }}></div>
-      </div>
+      </div> */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -155,11 +167,11 @@ export default function PlatformJourney() {
             <span className="font-bold text-blue-700">misurabile</span>.
           </p>
         </motion.div>
-        
+
         {/* Journey map con timeline visuale */}
         <div className="relative mb-24">
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-50 via-blue-100 to-blue-200 transform -translate-x-1/2"></div>
-          
+
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -168,9 +180,8 @@ export default function PlatformJourney() {
               whileInView="onscreen"
               viewport={{ once: true, amount: 0.3 }}
               variants={cardVariants}
-              className={`relative flex flex-col mb-16 lg:mb-24 ${
-                index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-              } items-center`}
+              className={`relative flex flex-col mb-16 lg:mb-24 ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                } items-center`}
             >
               {/* Indicatore sulla timeline */}
               <div className="hidden lg:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
@@ -178,13 +189,13 @@ export default function PlatformJourney() {
                   <span className="text-blue-700 font-bold">{index + 1}</span>
                 </div>
               </div>
-              
+
               {/* Card contenuto */}
               <div className={`w-full lg:w-5/12 ${index % 2 === 0 ? "lg:pr-16" : "lg:pl-16"}`}>
                 <div className="bg-white rounded-xl shadow-lg p-6 border border-blue-100 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
                   {/* Angolo decorativo */}
                   <div className="absolute top-0 right-0 w-16 h-16 -mt-8 -mr-8 rounded-full bg-blue-50"></div>
-                  
+
                   <div className="flex items-start mb-4">
                     <div className={`p-3 rounded-lg mr-4 ${step.bgColor}`}>
                       {step.icon}
@@ -194,7 +205,7 @@ export default function PlatformJourney() {
                       <p className="text-gray-600">{step.description}</p>
                     </div>
                   </div>
-                  
+
                   {/* Elemento visuale di completamento */}
                   <div className="mt-4 pt-4 border-t border-gray-100 flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
@@ -204,10 +215,10 @@ export default function PlatformJourney() {
                   </div>
                 </div>
               </div>
-              
+
               {/* Elemento centrale vuoto (solo per desktop) */}
               <div className="hidden lg:block w-2/12"></div>
-              
+
               {/* Visualizzazione avanzata invece di semplici icone */}
               <div className="hidden lg:flex w-5/12 items-center justify-center">
                 <div className="w-full max-w-xs">
@@ -217,7 +228,7 @@ export default function PlatformJourney() {
                       <div className={`p-4 rounded-full ${step.bgColor} mb-4`}>
                         {step.icon}
                       </div>
-                      
+
                       {/* Contenuto informativo */}
                       <div className="text-center mt-2">
                         <div className="flex items-center justify-center mb-3">
@@ -225,17 +236,17 @@ export default function PlatformJourney() {
                             {step.visualContent.metrics}
                           </div>
                         </div>
-                        
+
                         <div className="flex items-center justify-center mt-3">
                           <CheckCircle className="h-4 w-4 text-green-500 mr-1 flex-shrink-0" />
                           <span className="text-gray-700 text-sm">
                             {step.visualContent.benefit}
                           </span>
                         </div>
-                        
+
                         {/* Indicatore dello step attuale */}
                         <div className="mt-4 pt-3 border-t border-gray-100">
-                          <span className={`text-xs font-medium ${step.bgColor} bg-opacity-20 px-3 py-1 rounded-full`}>
+                          <span className={`text-xs text-white font-medium ${step.bgColor} bg-opacity-20 px-3 py-1 rounded-full`}>
                             Step {index + 1} di {steps.length}
                           </span>
                         </div>
@@ -247,7 +258,7 @@ export default function PlatformJourney() {
             </motion.div>
           ))}
         </div>
-        
+
         {/* Call to action */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -269,6 +280,7 @@ export default function PlatformJourney() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             className="px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            onClick={handlePlatformAction}
           >
             Registra la tua azienda
           </motion.button>

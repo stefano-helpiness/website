@@ -16,8 +16,8 @@ export default function Navigation() {
   } = useToast();
   const handlePlatformAction = () => {
     toast({
-      description: "Grazie per il tuo interesse, la piattaforma sarà operativa a breve, se desideri maggiori informazioni non esitare a scriverci alla nostra email!",
-      className: "fixed top-20 right-4"
+      description: "Grazie per il tuo interesse! La piattaforma sarà operativa a breve, se desideri maggiori informazioni non esitare a scriverci alla nostra email!",
+      className: "fixed top-20 left-1/2 -translate-x-1/2 w-[70%]"
     });
   };
   return <nav className="fixed top-0 left-0 right-0 w-full z-50 bg-gradient-to-l from-green-400 to-blue-500 shadow-sm backdrop-blur-sm">
@@ -25,13 +25,12 @@ export default function Navigation() {
       <div className="pl-0">
         <Link to="/">
           <img
-            src="/lovable-uploads/HelpinessLogo_v1.png"
+            src="/lovable-uploads/Logo1.png"
             alt="Helpiness Logo"
             className="w-20 h-20 rounded-2xl "
           />
         </Link>
       </div>
-
 
       <div className="hidden md:flex items-center space-x-8 mx-auto px-8">
         <NavigationMenu>
@@ -89,7 +88,7 @@ export default function Navigation() {
       <div className="hidden md:flex items-center space-x-4 mr-2">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="bg-white text-lg text-blue-900 border-2 border-white transform transition-transform duration-300 hover:scale-105 hover:bg-white">
+            <Button className="bg-white text-lg text-green-600 border-2 border-white transform transition-transform duration-300 hover:scale-105 hover:bg-white">
               Accedi alla piattaforma
             </Button>
 
@@ -129,10 +128,10 @@ export default function Navigation() {
 
               <div className="space-y-4">
                 <h3 className="font-medium mb-2">Cosa Facciamo</h3>
-                <Link to="/aziende" className="block w-full text-left px-4 py-2 hover:bg-gray-50" onClick={() => setIsOpen(false)}>
+                <Link to="/percorso-aziende" className="block w-full text-left px-4 py-2 hover:bg-gray-50" onClick={() => setIsOpen(false)}>
                   Aziende
                 </Link>
-                <Link to="/enti" className="block w-full text-left px-4 py-2 hover:bg-gray-50" onClick={() => setIsOpen(false)}>
+                <Link to="/percorso-enti" className="block w-full text-left px-4 py-2 hover:bg-gray-50" onClick={() => setIsOpen(false)}>
                   Enti
                 </Link>
                 <Link to="/modello-di-business" className="block w-full text-left px-4 py-2 hover:bg-gray-50" onClick={() => setIsOpen(false)}>
@@ -140,15 +139,23 @@ export default function Navigation() {
                 </Link>
               </div>
 
-              <Link to="/careers" className="block w-full text-left px-4 py-2 hover:bg-gray-50" onClick={() => setIsOpen(false)}>
-                Careers
-              </Link>
+              <div className="space-y-4">
+                <h3 className="font-medium mb-2">
+                  <Link to="/careers" onClick={() => setIsOpen(false)}>
+                    Careers
+                  </Link>
+                </h3>
+              </div>
 
-              <Link to="/partnership" className="block w-full text-left px-4 py-2 hover:bg-gray-50" onClick={() => setIsOpen(false)}>
-                Partnership
-              </Link>
+              <div className="space-y-4">
+                <h3 className="font-medium mb-2">
+                  <Link to="/partnership" onClick={() => setIsOpen(false)}>
+                    Partnership
+                  </Link>
+                </h3>
+              </div>
 
-              <Button className="w-full bg-orange-500 hover:bg-orange-600 mt-4">
+              <Button className="w-full bg-orange-500 hover:bg-orange-600 mt-4" onClick={handlePlatformAction}>
                 Accedi alla piattaforma
               </Button>
             </div>
