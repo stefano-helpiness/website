@@ -71,7 +71,7 @@ export default function Footer() {
               {/* <li className="text-gray-400 text-sm">Tel: +39 123 456 7890</li> */}
               <li className="text-gray-400 text-sm">Sede: Sansepolcro, AR, Italia</li>
               <li className="mt-3">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+                <a href="https://www.linkedin.com/company/helpiness" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                   <Linkedin size={20} />
                 </a>
               </li>
