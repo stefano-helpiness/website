@@ -6,10 +6,10 @@ export default function BusinessModel() {
   const plans = [
     {
       name: "Essential",
-      price: "€0",
-      totalAmount: "€0",
-      totalPeriod: "/anno",
-      period: "/mese",
+      // price: "€0",
+      // totalAmount: "€0",
+      // totalPeriod: "/anno",
+      // period: "/mese",
       note: "Funzioni Base:",
       features: [
         "Donazioni monetarie",
@@ -20,10 +20,10 @@ export default function BusinessModel() {
     },
     {
       name: "Plus",
-      price: "€125",
-      totalAmount: "€1.500",
-      totalPeriod: "/anno",
-      period: "/mese",
+      // price: "€125",
+      // totalAmount: "€1.500",
+      // totalPeriod: "/anno",
+      // period: "/mese",
       note: "Tutte le funzioni Essential più:",
       features: [
         "Donazioni di prodotti fino a 20 Tonnellate",
@@ -34,10 +34,10 @@ export default function BusinessModel() {
     },
     {
       name: "Impact",
-      price: "€275",
-      totalAmount: "€3.300",
-      totalPeriod: "/anno",
-      period: "/mese",
+      // price: "€275",
+      // totalAmount: "€3.300",
+      // totalPeriod: "/anno",
+      // period: "/mese",
       note: "Tutte le funzioni Plus più:",
       features: [
         "Donazione di prodotti senza limiti",

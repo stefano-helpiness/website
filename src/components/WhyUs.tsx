@@ -8,6 +8,8 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
+import { useToast } from "@/hooks/use-toast";
+import { toast } from "@/hooks/use-toast";
 
 const features = [
   {
@@ -132,6 +134,12 @@ const BackgroundBlob = ({ color, delay, duration, size, top, left }) => {
 };
 
 export default function WhyUs() {
+  const handlePlatformAction = () => {
+    toast({
+      description: "Grazie per il tuo interesse! La piattaforma sarà operativa a breve, se desideri maggiori informazioni non esitare a scriverci alla nostra email!",
+      className: "fixed top-20 left-1/2 -translate-x-1/2 w-[70%]"
+    });
+  };
   return (
     <div id="why-us" className="relative py-24 overflow-hidden bg-gradient-to-b from-blue-50 via-blue-50 to-blue-100">
       {/* Background blobs */}
@@ -193,6 +201,7 @@ export default function WhyUs() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               className="mt-8 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 shadow-md transition duration-200"
+              onClick={handlePlatformAction}
             >
               Accedi alla piattaforma
             </motion.button>
